@@ -11,11 +11,6 @@ export default function MenuItem({image, altText, price, item}) {
                 <div className ="card-body">
               <h5 className="card-title">{item}</h5>
               <p className ="card-text">{`$${price}`}</p>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">An item</li>
-              <li className="list-group-item">A second item</li>
-              <li className="list-group-item">A third item</li>
-            </ul>
             <div className ="card-body">
             </div>
                 </div>

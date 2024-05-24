@@ -1,18 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import MenuItem from './components/MenuItem';
-import { covfefeMenuItems } from './covfefeData';
+import { covfefeMenuItems, covfefeDessertItems } from './covfefeData';
 
 function App() {
   
-  const [menuItems, setMenuItems] = useState(covfefeMenuItems);
-  const [covfefeDessertItems, setCovfefeDessertItems] = useState(covfefeDessertItems);
+  const [menuItems, setMenuItems] = useState(covfefeMenuItems)
+  const [dessertItems, setDessertItems] = useState(covfefeDessertItems)
   
   return (
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h1 className="my-3 text-center">Covfefe Shop Menu</h1>
+          <h1 className={"my-3 text-center"}>Covfefe Shop Menu</h1>
         </div>
       </div>
       <div className="row my-5">
@@ -23,7 +23,7 @@ function App() {
       </div>
       <div className="row">
         <div className="h3">Desserts</div>
-        {covfefeDessertItems && covfefeDessertItems.length > 0 && covfefeDessertItems.map((dessertItem) => (
+        {dessertItems && dessertItems.length > 0 && dessertItems.map((dessertItem) => (
             <MenuItem key={dessertItem.id} item={dessertItem.item} price={dessertItem.price} image={dessertItem.image} altText={dessertItem.item} />
         ))}
       </div>
