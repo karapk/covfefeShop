@@ -8,6 +8,7 @@ export default function MenuItem({ image, altText, price, item }) {
         <div className="card-body">
           <h5 className="card-title">{item}</h5>
           <p className="card-text">{`$${price}`}</p>
+          <button type="button" class="btn btn-outline-secondary" onClick={() => console.log('clicked')}>Add to cart</button>
         </div>
       </div>
     </div>
