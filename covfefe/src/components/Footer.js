@@ -6,8 +6,8 @@ export default function Footer() {
     <div className="container">
         <div className="row">
             <div className="col-md-4 mb-3">
-                <h5>Company Name</h5>
-                <p>Some information about the company.</p>
+                <h5>Covfefe</h5>
+                <p>Tremendously delicious, simply "The Best"</p>
             </div>
             <div className="col-md-4 mb-3">
                 <h5>Links</h5>
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
         <div className="row">
             <div className="col-12 text-center">
-                <p className="mb-0">&copy; 2024 Company Name. All rights reserved.</p>
+                <p className="mb-0">&copy; 2024 Covfefe. All rights reserved.</p>
             </div>
         </div>
     </div>

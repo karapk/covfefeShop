@@ -7,10 +7,10 @@ export default function MenuItem({ image, altText, price, item }) {
 
   useEffect(() => {
     Swal.fire({
-      title: 'Error!',
-      text: `Discounts this week ${item}`,
-      icon: 'error',
-      confirmButtonText: 'Cool'
+      title: 'Memorial Week Discount!!!',
+      text: `Memorial Week Discount: ${item}, buy one get one free!`,
+      icon: 'info',
+      confirmButtonText: 'Claim Discount',
     })
   }, []);
 
