@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TiShoppingCart } from "react-icons/ti";
 
-export default function Navbar() {
+export default function Navbar({ toggleCart }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -32,12 +33,15 @@ export default function Navbar() {
             </li>
           </ul>
           <span className="navbar-text mx-auto">
-            Covfefe-Simply, The Best.
+            Covfefe Simply, The Best
           </span>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-light" type="submit">Search</button>
           </form>
+          <button className="btn btn-outline-light ms-2" onClick={toggleCart}>
+          <TiShoppingCart />
+          </button>
         </div>
       </div>
     </nav>

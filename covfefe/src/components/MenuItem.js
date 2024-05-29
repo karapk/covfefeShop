@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Swal from 'sweetalert2';
 
-export default function MenuItem({ image, altText, price, item }) {
+export default function MenuItem({ image, altText, price, item, addToCart }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       Swal.fire({
@@ -24,7 +24,7 @@ export default function MenuItem({ image, altText, price, item }) {
         <div className="card-body text-center">
           <h5 className="card-title">{item}</h5>
           <p className="card-text">{`$${price}`}</p>
-          <button type="button" className="btn btn-outline-secondary" onClick={() => console.log('clicked')}>Add to cart</button>
+          <button type="button" className="btn btn-outline-secondary" onClick={addToCart}>Add to cart</button>
         </div>
       </div>
     </div>

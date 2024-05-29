@@ -3,10 +3,13 @@ import MenuItem from './MenuItem';
 import { covfefeMenuItems, covfefeDessertItems } from '../covfefeData';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ShoppingCart from './ShoppingCart';
 
 export default function Home() {
   const [menuItems, setMenuItems] = useState([]);
   const [dessertItems, setDessertItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [cartVisible, setCartVisible] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -15,9 +18,26 @@ export default function Home() {
     }, 1000);
   }, []);
 
+  const addToCart = (item) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((cartItem) => cartItem.item === item.item);
+      if (existingItem) {
+        return prevItems.map((cartItem) =>
+          cartItem.item === item.item ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        );
+      } else {
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
+  };
+
+  const toggleCart = () => {
+    setCartVisible(!cartVisible);
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar toggleCart={toggleCart} />
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -26,22 +46,23 @@ export default function Home() {
         </div>
         <div className="row my-5">
           <div className="col-12">
-            <h3 className="text-center text-white">Coffee</h3>
+            <h3 className="text-center">Coffee</h3>
           </div>
           {menuItems && menuItems.length > 0 && menuItems.map((menuItem) => (
-            <MenuItem key={menuItem.id} item={menuItem.item} price={menuItem.price} image={menuItem.image} altText={menuItem.item} />
+            <MenuItem key={menuItem.id} item={menuItem.item} price={menuItem.price} image={menuItem.image} altText={menuItem.item} addToCart={() => addToCart(menuItem)} />
           ))}
         </div>
         <div className="row">
           <div className="col-12">
-            <h3 className="text-center text-white">Desserts</h3>
+            <h3 className="text-center">Desserts</h3>
           </div>
           {dessertItems && dessertItems.length > 0 && dessertItems.map((dessertItem) => (
-            <MenuItem key={dessertItem.id} item={dessertItem.item} price={dessertItem.price} image={dessertItem.image} altText={dessertItem.item} />
+            <MenuItem key={dessertItem.id} item={dessertItem.item} price={dessertItem.price} image={dessertItem.image} altText={dessertItem.item} addToCart={() => addToCart(dessertItem)} />
           ))}
         </div>
       </div>
       <Footer />
+      <ShoppingCart cartItems={cartItems} isVisible={cartVisible} toggleCart={toggleCart} />
     </>
   );
 }
