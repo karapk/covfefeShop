@@ -1,18 +1,21 @@
-import React, { useEffect, useRef } from 'react';
-import Swal from 'sweetalert2'
-
-
+import React, { useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 export default function MenuItem({ image, altText, price, item }) {
-
   useEffect(() => {
-    Swal.fire({
-      title: 'Memorial Week Discount!!!',
-      text: `Memorial Week Discount: ${item}, buy one get one free!`,
-      icon: 'info',
-      confirmButtonText: 'Claim Discount',
-    })
-  }, []);
+    const timeoutId = setTimeout(() => {
+      Swal.fire({
+        title: 'Memorial Week Discount!!!',
+        text: `Memorial Week Discount: ${item}, buy one get one free!`,
+        icon: 'info',
+        confirmButtonText: 'Claim Discount',
+      });
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [item]); // Add 'item' to the dependency array
 
   return (
     <div className="col-4 mb-4">

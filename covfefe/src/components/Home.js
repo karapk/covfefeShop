@@ -24,7 +24,7 @@ function App() {
         </div>
       </div>
       <div className="row my-5 height: 50px;">
-        <div className="h-25 d-inline-block">Coffee</div>
+        <div className="h3 d-inline-block">Coffee</div>
         {menuItems && menuItems.length > 0 && menuItems.map((menuItem) => (
           <MenuItem key={menuItem.id} item={menuItem.item} price={menuItem.price} image={menuItem.image} altText={menuItem.item} />
         ))}
