@@ -1,19 +1,54 @@
-.App {
+body {
+  background-color: #f3e5ab;
+  background-image: url('https://github.com/karapk/covfefeShop/blob/main/Coffee%20bag.jpeg?raw=true');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+h1, h3 {
+  color: #4e342e;
+}
+
+.navbar {
+  background: #4e342e;
+}
+
+.navbar-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  flex-grow: 1;
   text-align: center;
 }
 
+footer {
+  background: #4e342e;
+  padding: 20px 0;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-outline-secondary {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin-top: 20px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
 }

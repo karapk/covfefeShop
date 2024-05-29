@@ -15,13 +15,13 @@ export default function MenuItem({ image, altText, price, item }) {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [item]); // Add 'item' to the dependency array
+  }, [item]);
 
   return (
-    <div className="col-4 mb-4">
-      <div className="card h-100">
+    <div className="col-md-4 mb-4">
+      <div className="card h-100 shadow-sm">
         <img src={image} className="card-img-top" alt={altText} />
-        <div className="card-body">
+        <div className="card-body text-center">
           <h5 className="card-title">{item}</h5>
           <p className="card-text">{`$${price}`}</p>
           <button type="button" className="btn btn-outline-secondary" onClick={() => console.log('clicked')}>Add to cart</button>
