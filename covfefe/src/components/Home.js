@@ -78,12 +78,12 @@ export default function Home() {
     <>
       <Navbar toggleCart={toggleCart} />
       <div className="container">
+      <Weather currentTemp={currentTemp} userCity={userCity} />
         <div className="row">
           <div className="col-12">
             <h1 className="my-3 text-center">Covfefe Shop Menu</h1>
           </div>
         </div>
-        <Weather currentTemp={currentTemp} userCity={userCity} />
         <div className="row my-5">
           <div className="col-12">
             <h3 className="text-center">Coffee</h3>
