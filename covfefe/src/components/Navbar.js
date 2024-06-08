@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router';
 import { TiShoppingCart } from "react-icons/ti";
 
-export default function Navbar({ toggleCart }) {
-  return (
+const Navbar = () => {
+   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">Covfefe</a>
@@ -46,4 +47,5 @@ export default function Navbar({ toggleCart }) {
       </div>
     </nav>
   );
-}
+};
+export default Navbar({ toggleCart });
