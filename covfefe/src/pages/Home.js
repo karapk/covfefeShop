@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import MenuItem from './MenuItem';
-import Weather from './Weather';
+import MenuItem from '../components/MenuItem';
+import Weather from '../components/Weather';
 import { covfefeMenuItems, covfefeDessertItems } from '../covfefeData';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import ShoppingCart from './ShoppingCart';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ShoppingCart from '../components/ShoppingCart';
+import AboutUs from './AboutUs';
 
 export default function Home() {
   const weatherApiKey = '8a4a659f034f1c9c5b0e86ce24c04de9';
