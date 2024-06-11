@@ -1,10 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate from react-router-dom
-// import { TiShoppingCart } from "react-icons/ti";
+import { TiShoppingCart } from "react-icons/ti";
+import ShoppingCart from './ShoppingCart'; // Import the ShoppingCart component
 
-const Navbar = () => {
+
+export default function Navbar() {
   const navigate = useNavigate();
-  
+
+  const [cartItems, setCartItems] = useState([]);
+  const [cartVisible, setCartVisible] = useState(false);
+
+   const addToCart = (item) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((cartItem) => cartItem.item === item.item);
+      if (existingItem) {
+        return prevItems.map((cartItem) =>
+          cartItem.item === item.item ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        );
+      } else {
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
+  };
+
+  const toggleCart = () => {
+    setCartVisible(!cartVisible);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -47,8 +69,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+      <ShoppingCart cartItems={cartItems} isVisible={cartVisible} toggleCart={toggleCart} />
     </nav>
   );
-};
-
-export default Navbar;
+}
