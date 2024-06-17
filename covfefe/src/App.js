@@ -2,6 +2,7 @@
 import './App.css'
 import React, { useState } from 'react'
 import Home from './pages/Home'
+import Menu from './pages/Menu'
 import {
   BrowserRouter as Router,
   Routes, 
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     element: <Layout/>,
 
     children: [
-      {path:"", element: <Home />},
+      {path:"", element: <Menu />},
       {path: "AboutUs",element:<AboutUs/> },
     ]
   }
