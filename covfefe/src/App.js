@@ -6,24 +6,24 @@ import {
   BrowserRouter as Router,
   Routes, 
   Route,
-  createBrowserRouter,
-  RouterProvider,
+  // createBrowserRouter,
+  // RouterProvider,
 } from "react-router-dom";
-import Layout from './components/Layout'
+// import Layout from './components/Layout'
 import AboutUs from './pages/AboutUs';
 import Navbar from './components/Navbar';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout/>,
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Layout/>,
 
-    children: [
-      {path:"", element: <Home />},
-      {path: "AboutUs",element:<AboutUs/> },
-    ]
-  }
-]);
+//     children: [
+//       {path:"", element: <Home />},
+//       {path: "AboutUs",element:<AboutUs/> },
+//     ]
+//   }
+// ]);
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -51,7 +51,7 @@ function App() {
       <Navbar toggleCart={toggleCart} cartVisible={cartVisible} cartItems={cartItems} />
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart} />} />
-        {/* Define other routes as needed */}
+       <Route path="aboutUs" element={<AboutUs/>} /> 
       </Routes>
     </Router>
     </>

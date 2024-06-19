@@ -17,9 +17,12 @@ export default function Navbar({ toggleCart, cartVisible, cartItems }) {
               <Link className="nav-link active" aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
+            <Link className="nav-link" to="/menu">Menu</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/aboutUS">About Us</Link>
             </li>
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Menu
               </a>
@@ -29,10 +32,7 @@ export default function Navbar({ toggleCart, cartVisible, cartItems }) {
                 <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" href="#">Coming Soon</a></li>
               </ul>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">Contact</a>
-            </li>
+            </li> */}
           </ul>
           <span className="navbar-text mx-auto">
             Covfefe Simply, The Best
