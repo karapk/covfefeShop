@@ -12,6 +12,7 @@ import {
 // import Layout from './components/Layout'
 import AboutUs from './pages/AboutUs';
 import Navbar from './components/Navbar';
+import Menu from './pages/Menu';
 
 // const router = createBrowserRouter([
 //   {
@@ -52,6 +53,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart} />} />
        <Route path="aboutUs" element={<AboutUs/>} /> 
+       <Route path="menu" element={<Menu/>} />
       </Routes>
     </Router>
     </>

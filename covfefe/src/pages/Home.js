@@ -1,4 +1,3 @@
-// src/pages/Home.js
 import React, { useState, useEffect } from 'react';
 import MenuItem from '../components/MenuItem';
 import Weather from '../components/Weather';
